@@ -106,8 +106,49 @@ h1, h2, h3, p { margin-top: 0; }
 .survey { position: relative; display: grid; grid-template-columns: 0.8fr 1.2fr; align-items: center; gap: 6%; padding: 84px 10.3% 102px; overflow: hidden; background: var(--forest); color: white; }
 .survey-copy .eyebrow { margin-bottom: 19px; }
 .survey-copy > p:not(.eyebrow) { margin-bottom: 0; }
+.survey-cta { display: inline-flex; min-height: 48px; align-items: center; gap: 13px; margin-top: 25px; padding: 0 16px; border: 1px solid var(--lime); background: var(--lime); color: var(--forest-deep); font: 700 12px var(--sans); cursor: pointer; transition: background 180ms ease, transform 180ms ease; }
+.survey-cta:hover { transform: translateY(-2px); background: #d7e793; }
+.survey-cta-icon { font-size: 18px; }
 .survey video { display: block; width: 100%; max-height: 510px; aspect-ratio: 16 / 9; background: #102e23; object-fit: contain; }
 .survey-label { position: absolute; right: 10.3%; bottom: 26px; left: 10.3%; display: flex; justify-content: space-between; color: rgb(255 255 255 / 68%); font-size: 9px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+
+.poll-dialog { width: min(760px, calc(100% - 36px)); max-width: none; max-height: min(88svh, 900px); padding: 30px; overflow-y: auto; border: 0; background: var(--paper); color: var(--ink); box-shadow: 0 24px 90px rgb(0 0 0 / 30%); }
+.poll-dialog::backdrop { background: rgb(13 39 28 / 76%); backdrop-filter: blur(4px); }
+.poll-dialog-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; }
+.poll-dialog-header .eyebrow { margin-bottom: 11px; }
+.poll-dialog-header h2 { margin: 0; color: var(--forest-deep); font: 600 34px/1.15 var(--serif); }
+.poll-dialog-header h2 em { color: var(--leaf); }
+.poll-close { display: grid; width: 38px; height: 38px; flex: 0 0 38px; place-items: center; border: 1px solid #c9d0c4; border-radius: 50%; background: transparent; color: var(--forest); font-size: 24px; cursor: pointer; }
+.poll-description { margin: 12px 0 24px; color: var(--muted); font-size: 12px; line-height: 1.6; }
+.poll-question { min-width: 0; margin: 0; padding: 18px 0; border: 0; border-top: 1px solid #dfe3d8; }
+.poll-question legend { width: 100%; padding: 0 0 12px; color: var(--forest-deep); font-size: 14px; font-weight: 700; line-height: 1.5; }
+.poll-question legend > span { display: inline-block; min-width: 31px; margin-right: 7px; color: #879b53; font-size: 10px; }
+.poll-options { display: flex; flex-wrap: wrap; gap: 8px; }
+.poll-options label { position: relative; cursor: pointer; }
+.poll-options input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.poll-options label > span { display: block; padding: 9px 12px; border: 1px solid #cdd4c7; background: white; color: #40554a; font-size: 11px; transition: border-color 150ms ease, background 150ms ease, color 150ms ease; }
+.poll-options input:checked + span { border-color: var(--forest); background: var(--forest); color: white; }
+.poll-options input:focus-visible + span { outline: 3px solid #9dbd60; outline-offset: 2px; }
+.poll-privacy { margin: 13px 0 16px; color: #768277; font-size: 10px; line-height: 1.6; }
+.poll-submit, .poll-again { display: inline-flex; min-height: 45px; align-items: center; justify-content: center; gap: 20px; padding: 0 16px; border: 0; background: var(--forest); color: white; font: 700 12px var(--sans); cursor: pointer; }
+.poll-submit:hover, .poll-again:hover { background: var(--forest-deep); }
+.poll-results h3 { margin: 0 0 3px; color: var(--forest-deep); font: 600 27px var(--serif); }
+.poll-count { margin: 0 0 21px; color: var(--muted); font-size: 11px; }
+.poll-chart { display: grid; gap: 16px; }
+.poll-chart-question { padding-top: 13px; border-top: 1px solid #dfe3d8; }
+.poll-chart-question h4 { margin: 0 0 9px; color: var(--forest-deep); font-size: 12px; line-height: 1.5; }
+.poll-chart-options { display: grid; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.poll-chart-option { display: grid; grid-template-columns: minmax(88px, 145px) minmax(40px, 1fr) 24px; align-items: center; gap: 9px; color: #536359; font-size: 10px; }
+.poll-chart-track { height: 11px; overflow: hidden; background: #e3e7dd; }
+.poll-chart-bar { width: 0; height: 100%; transition: width 500ms ease; }
+.poll-chart-bar.color-0 { background: #4f9c59; }
+.poll-chart-bar.color-1 { background: #e7b339; }
+.poll-chart-bar.color-2 { background: #398ac0; }
+.poll-chart-bar.color-3 { background: #e06b50; }
+.poll-chart-bar.color-4 { background: #8a9d43; }
+.poll-chart-option strong { color: var(--forest-deep); text-align: right; }
+.poll-thanks { margin: 25px 0 15px; color: var(--forest); font: 700 21px var(--serif); }
+.poll-results[hidden] { display: none; }
 
 .site-footer { display: grid; grid-template-columns: 1fr 1.3fr 1fr auto; align-items: center; gap: 25px; padding: 28px 7.1%; background: #f8f7f1; }
 .footer-wordmark { font-size: 17px; }
@@ -189,6 +230,7 @@ h1, h2, h3, p { margin-top: 0; }
   .member-caption p { font-size: 10px; }
   .survey { grid-template-columns: 1fr; gap: 27px; padding: 60px 22px 77px; }
   .survey-copy > p:not(.eyebrow) { font-size: 12px; }
+  .survey-cta { margin-top: 18px; }
   .survey video { aspect-ratio: 4 / 3; }
   .survey-label { right: 22px; bottom: 22px; left: 22px; font-size: 8px; }
   .site-footer { grid-template-columns: 1fr 1fr; gap: 18px; padding: 25px 22px; }
@@ -196,6 +238,13 @@ h1, h2, h3, p { margin-top: 0; }
   .social-links { justify-content: flex-end; gap: 12px; font-size: 10px; }
   .social-links a { gap: 5px; }
   .social-links img { width: 25px; height: 25px; }
+  .poll-dialog { width: calc(100% - 20px); max-height: 90svh; padding: 21px 17px; }
+  .poll-dialog-header h2 { font-size: 29px; }
+  .poll-question { padding: 14px 0; }
+  .poll-question legend { font-size: 12px; }
+  .poll-options { gap: 7px; }
+  .poll-options label > span { padding: 8px 10px; font-size: 10px; }
+  .poll-chart-option { grid-template-columns: minmax(75px, 105px) minmax(35px, 1fr) 20px; gap: 7px; font-size: 9px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

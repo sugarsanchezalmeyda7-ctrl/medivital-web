@@ -123,13 +123,53 @@
     </section>
 
     <section class="survey" aria-labelledby="survey-title">
-      <div class="survey-copy"><p class="eyebrow eyebrow-light"><span></span> Queremos escucharte</p><h2 id="survey-title">Tu opinión<br><em>también cuenta.</em></h2><p>Conoce las voces que nos ayudan a seguir mejorando.</p></div>
+      <div class="survey-copy"><p class="eyebrow eyebrow-light"><span></span> Queremos escucharte</p><h2 id="survey-title">Tu opinión<br><em>también cuenta.</em></h2><p>Conoce las voces que nos ayudan a seguir mejorando.</p><button class="survey-cta" id="open-poll" type="button"><span class="survey-cta-icon" aria-hidden="true">✳</span> Responder la encuesta <span aria-hidden="true">↗</span></button></div>
       <video controls preload="metadata" playsinline poster="imagen-de-fondo.jpeg">
         <source src="WhatsApp%20Video%202026-09-28%20at%208.33.02%20PM%20(1).mp4" type="video/mp4">
         Tu navegador no puede reproducir este video.
       </video>
       <div class="survey-label"><span>MEDIVITAL / 06</span><span>Encuesta a usuarios</span></div>
     </section>
+
+    <dialog class="poll-dialog" id="poll-dialog" aria-labelledby="poll-title" aria-describedby="poll-description">
+      <div class="poll-dialog-header">
+        <div><p class="eyebrow"><span></span> Tu opinión cuenta</p><h2 id="poll-title">Encuesta <em>MEDIVITAL</em></h2></div>
+        <button class="poll-close" type="button" aria-label="Cerrar encuesta" data-close-poll>×</button>
+      </div>
+      <p class="poll-description" id="poll-description">Son 5 preguntas rápidas de selección. No pedimos datos personales.</p>
+      <form id="poll-form">
+        <fieldset class="poll-question">
+          <legend><span>01</span> ¿Has probado MEDIVITAL?</legend>
+          <div class="poll-options"><label><input type="radio" name="tried" value="Sí" required><span>Sí</span></label><label><input type="radio" name="tried" value="No"><span>No</span></label></div>
+        </fieldset>
+        <fieldset class="poll-question">
+          <legend><span>02</span> ¿Qué producto te gustaría probar?</legend>
+          <div class="poll-options"><label><input type="radio" name="product" value="Menta" required><span>Menta</span></label><label><input type="radio" name="product" value="Jengibre"><span>Jengibre</span></label><label><input type="radio" name="product" value="Manzanilla"><span>Manzanilla</span></label><label><input type="radio" name="product" value="Todos"><span>Todos</span></label></div>
+        </fieldset>
+        <fieldset class="poll-question">
+          <legend><span>03</span> ¿Deseas tener nuestro producto en tu tienda?</legend>
+          <div class="poll-options"><label><input type="radio" name="store" value="Sí" required><span>Sí</span></label><label><input type="radio" name="store" value="No"><span>No</span></label><label><input type="radio" name="store" value="Quiero más información"><span>Quiero más información</span></label></div>
+        </fieldset>
+        <fieldset class="poll-question">
+          <legend><span>04</span> ¿Cómo conociste nuestro producto?</legend>
+          <div class="poll-options"><label><input type="radio" name="discovery" value="Redes sociales" required><span>Redes sociales</span></label><label><input type="radio" name="discovery" value="Recomendación"><span>Recomendación</span></label><label><input type="radio" name="discovery" value="Feria o evento"><span>Feria o evento</span></label><label><input type="radio" name="discovery" value="Otro medio"><span>Otro medio</span></label></div>
+        </fieldset>
+        <fieldset class="poll-question">
+          <legend><span>05</span> ¿Te gustaría recibir el catálogo MEDIVITAL y nuestras ofertas en tu celular?</legend>
+          <div class="poll-options"><label><input type="radio" name="catalog" value="Sí" required><span>Sí</span></label><label><input type="radio" name="catalog" value="No"><span>No</span></label><label><input type="radio" name="catalog" value="Tal vez"><span>Tal vez</span></label></div>
+        </fieldset>
+        <p class="poll-privacy">Las respuestas solo se mantienen en esta página mientras esté abierta. No se envían ni se guardan.</p>
+        <button class="poll-submit" type="submit">Ver resultados <span aria-hidden="true">→</span></button>
+      </form>
+      <section class="poll-results" id="poll-results" aria-live="polite" hidden>
+        <p class="eyebrow"><span></span> Resultados de esta sesión</p>
+        <h3>Así respondieron</h3>
+        <p class="poll-count"><span id="participant-count">0</span> participantes en esta página</p>
+        <div class="poll-chart" id="poll-chart" aria-label="Gráfico de barras con los resultados de la encuesta"></div>
+        <p class="poll-thanks">¡Muchas gracias por participar!</p>
+        <button class="poll-again" id="poll-again" type="button">Otra persona puede responder <span aria-hidden="true">↗</span></button>
+      </section>
+    </dialog>
   </main>
 
   <footer class="site-footer">
