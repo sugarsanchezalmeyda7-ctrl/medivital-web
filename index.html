@@ -4,12 +4,23 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#164b36">
+  <meta name="robots" content="index,follow">
+  <meta name="googlebot" content="index,follow">
+  <meta name="google-site-verification" content="google086720088918dd9c">
   <meta name="description" content="Conoce MEDIVITAL, caramelos elaborados con ingredientes naturales y sabores inspirados en plantas y frutas.">
+  <meta property="og:title" content="MEDIVITAL | Caramelos saludables">
+  <meta property="og:description" content="Conoce MEDIVITAL, caramelos elaborados con ingredientes naturales y sabores inspirados en plantas y frutas.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tuusuario.github.io/MEDIVITAL/">
+  <meta property="og:image" content="https://tuusuario.github.io/MEDIVITAL/imagen-de-fondo.jpeg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://tuusuario.github.io/MEDIVITAL/">
   <title>MEDIVITAL | Caramelos saludables</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script src="supabase-config.js"></script>
   <script src="script.js" defer></script>
 </head>
 <body>
@@ -137,6 +148,7 @@
         <button class="poll-close" type="button" aria-label="Cerrar encuesta" data-close-poll>×</button>
       </div>
       <p class="poll-description" id="poll-description">Son 5 preguntas rápidas de selección. No pedimos datos personales.</p>
+      <p class="poll-status" id="poll-status" role="status" aria-live="polite"></p>
       <form id="poll-form">
         <fieldset class="poll-question">
           <legend><span>01</span> ¿Has probado MEDIVITAL?</legend>
@@ -158,11 +170,11 @@
           <legend><span>05</span> ¿Te gustaría recibir el catálogo MEDIVITAL y nuestras ofertas en tu celular?</legend>
           <div class="poll-options"><label><input type="radio" name="catalog" value="Sí" required><span>Sí</span></label><label><input type="radio" name="catalog" value="No"><span>No</span></label><label><input type="radio" name="catalog" value="Tal vez"><span>Tal vez</span></label></div>
         </fieldset>
-        <p class="poll-privacy">Las respuestas solo se mantienen en esta página mientras esté abierta. No se envían ni se guardan.</p>
-        <button class="poll-submit" type="submit">Ver resultados <span aria-hidden="true">→</span></button>
+        <p class="poll-privacy">Al conectar el almacenamiento, tus respuestas se guardarán de forma anónima. El gráfico solo mostrará resultados agrupados.</p>
+        <button class="poll-submit" id="poll-submit" type="submit">Enviar respuestas <span aria-hidden="true">→</span></button>
       </form>
       <section class="poll-results" id="poll-results" aria-live="polite" hidden>
-        <p class="eyebrow"><span></span> Resultados de esta sesión</p>
+        <p class="eyebrow"><span></span> Resultados acumulados</p>
         <h3>Así respondieron</h3>
         <p class="poll-count"><span id="participant-count">0</span> participantes en esta página</p>
         <div class="poll-chart" id="poll-chart" aria-label="Gráfico de barras con los resultados de la encuesta"></div>
@@ -185,5 +197,9 @@
     </div>
     <span class="copyright">© MEDIVITAL</span>
   </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/51999999999?text=Hola%20MEDIVITAL%2C%20quiero%20responder%20la%20encuesta." target="_blank" rel="noopener noreferrer" aria-label="Contacto por WhatsApp">
+    <img src="WASAP.jpg" alt="WhatsApp" width="52" height="52" loading="lazy">
+  </a>
 </body>
 </html>
